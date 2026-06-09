@@ -1,0 +1,24 @@
+name: Gold Price Notify
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 00:00 UTC = 07:00 เช้า เวลาไทย (UTC+7)
+  workflow_dispatch:       # กดรันมือได้ด้วย
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run gold notifier
+        run: python gold_notify.py

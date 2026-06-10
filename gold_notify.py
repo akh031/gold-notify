@@ -8,7 +8,8 @@ def get_gold_price():
     headers = {"x-access-token": "goldapi-free"}
     res = requests.get(url, headers=headers, timeout=10)
     data = res.json()
-    return data.get("price", "ไม่พบราคา")
+    price = data.get("price", 0)
+    return float(price)
 
 def send_discord(price):
     now = datetime.now().strftime("%d/%m/%Y %H:%M")

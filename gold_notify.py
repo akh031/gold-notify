@@ -2,8 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-DISCORD_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1513923273979855010/d_GHHcykVFsbjbZFTQHf1cbq2DojZ-vNlQKq_jgcp50OElYKHYuayMm3u2MCTrmKufK_"
-
+https://discordapp.com/api/webhooks/1513943006850584778/tkEqkwq2xDz7dz-VkIjue4M6WFdT99UG3RLLasGcVwX6jsJUbr5veQuUSJPpV0TTtcFG
 def get_gold_price():
     url = "https://www.goldtraders.or.th/"
     headers = {"User-Agent": "Mozilla/5.0"}
